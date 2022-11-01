@@ -1,0 +1,3 @@
+[submodule "demo/pyteal/auction-demo"]
+	path = demo/pyteal/auction-demo
+	url = https://github.com/algorand/auction-demo.git
