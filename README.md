@@ -1,17 +1,23 @@
 # Algorand WebBroker
 
-Not polling the indexer, Merge block event on Indexer. <br/>
+Challenge With [Bounty](https://gitcoin.co/issue/29380) - [Algorand Greehouse Hack #2](https://gitcoin.co/hackathon/greenhouse). <br/>
+>> We are looking to build a solution that will enable subscribing to events on the blockchain and all the subscribers will be notified in real time of the various events they subscribe to.
+
+No polling the indexer, Merge block event on indexer. <br/>
 WebBroker's support subscribe blockEvent via Websocket and Webhook.
 
 <img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/diagram2.png" width="80%">
 
-* [https://github.com/ubinix-warun/algorand-indexer](https://github.com/ubinix-warun/algorand-indexer/tree/develop-pubsocket) -- extend The indexer to subscribe blockEvent.
+* [https://github.com/ubinix-warun/algorand-indexer](https://github.com/ubinix-warun/algorand-indexer/tree/develop-pubsocket) -- extend the indexer to subscribe blockEvent.
 * [https://github.com/ubinix-warun/algorand-sandbox](https://github.com/ubinix-warun/algorand-sandbox/tree/develop-pubsocket) -- sandbox toolkit for quickstart node/indexer and pg.
 
-Inspired by [PyTEAL Offchain Worker](https://github.com/ubinix-warun/pyteal-offchain-worker)
 
-### [Demo]()
-### [Sandbox up]()
+Inspired by [PyTEAL Offchain Worker](https://github.com/ubinix-warun/pyteal-offchain-worker) and [Algo Checker](https://github.com/ubinix-warun/pyteal-offchain-worker).
+
+-----------------
+
+### [Sandbox up]() -- 12min
+### [Demo]() -- 5min
 
 # Quickstart
 
@@ -39,12 +45,12 @@ Indexer version
 
 * Install Insomnia and import [API File](https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/Insomnia-All_2022-11-02.json) for demo api.
 
-<img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/screen_createTopicWsAll_Zoom.png" width="80%">
+<img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/screen_SubReceiverSender_Zoom.png" width="80%">
 
 Current version, the topic type is content [ "*", "SENDER", "RECEIVER", "APPID" ].
 
 <details>
-  <summary><b><h3>Scenario 1 -- CreateTopic (All) via WebSocket</h3></b></summary>
+  <summary><b><h3>Scenario 1 -- CreateTopic via WebSocket (All)</h3></b></summary>
   
 * Generate token for Websocket and set topic type is "*" (all message).
 
@@ -125,7 +131,7 @@ Carla's balances after auction:  {0: 98997100, 23: 1}  Algos
 </details>
 
 <details>
-  <summary><b><h3>Scenario 2 -- CreateTopic (RECEIVER) via WebSocket </h3></b></summary>
+  <summary><b><h3>Scenario 2 -- CreateTopic via WebSocket (RECEIVER) </h3></b></summary>
   
 * Generate token for Websocket and set topic type is "RECEIVER" (Txn.).
 
@@ -173,7 +179,7 @@ Carla's balances after auction:  {0: 98997100, 23: 1}  Algos
 </details>
 
 <details>
-  <summary><b><h3>Scenario 3 -- CreateTopic (SENDER) via Webhook </h3></b></summary>
+  <summary><b><h3>Scenario 3 -- CreateTopic via Webhook (SENDER)</h3></b></summary>
   
 * Generate token for Webhook and set topic type is "SENDER" (Txn.).
 
@@ -204,7 +210,6 @@ Carla's balances after auction:  {0: 98997100, 23: 1}  Algos
 
 * Run Hook-Receiver on backends/hook-receiver
 
-
 ```
 npm -i
 node index.js
@@ -224,11 +229,10 @@ node index.js
 </details>
 
 
-
 # Credit
 
 * [Algorand](https://developer.algorand.org/) - Building trusted infrastructure for the Borderless economy. 
-* [Echo Framework](https://echo.labstack.com/) and [Gorilla Web Toolkit](https://www.gorillatoolkit.org/)
+* [Echo Framework](https://echo.labstack.com/) and [Gorilla Web Toolkit](https://www.gorillatoolkit.org/) - High performance and Great Toolkit.
 * [auction-demo](https://github.com/algorand/auction-demo/) - This demo is an on-chain NFT auction using smart contracts on the Algorand blockchain.
 * [chainlink-polkadot](https://github.com/smartcontractkit/chainlink-polkadot/tree/master/pallet-chainlink) - This pallet allows your substrate built parachain/blockchain to interract with chainlink. 
 
