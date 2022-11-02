@@ -17,8 +17,8 @@ Inspired by [PyTEAL Offchain Worker](https://github.com/ubinix-warun/pyteal-offc
 
 -----------------
 
-### [Sandbox up]() -- 12min
-### [Demo]() -- 5min
+### [Sandbox up](https://youtu.be/h81ODV9WIDk) -- 12min
+### [Demo](https://youtu.be/eQwK4ZGvwGg) -- 5min
 
 # Quickstart
 
@@ -29,7 +29,7 @@ Pulling sandbox... POC: Dev PubSocket)
 ...
 
 Checkout sandbox... (Branch: Dev PubSocket)
-Branch 'develop-pubsocket' set up to track remote branch 'block-pubsub' from 'origin'.
+Branch 'develop-pubsocket' set up to track remote branch 'develop-pubsocket' from 'origin'.
 Switched to a new branch 'develop-pubsocket'
 ...
 
