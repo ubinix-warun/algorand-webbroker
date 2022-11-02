@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
-app.post('/post-test', (req, res) => {
+app.post('/webhook', (req, res) => {
     console.log('Got body:', req.body);
     res.sendStatus(200);
 });
