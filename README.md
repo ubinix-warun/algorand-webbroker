@@ -65,7 +65,7 @@ Current version, the topic type is content [ "*", "SENDER", "RECEIVER", "APPID" 
 	}
 }
 
-< Read "Token" from The response, then use 
+< Read "Token" from The response
 
 {
 	"topic": {
@@ -147,7 +147,7 @@ Carla's balances after auction:  {0: 98997100, 23: 1}  Algos
 	}
 }
 
-< Read "Token" from The response, then use 
+< Read "Token" from The response
 
 {
 	"topic": {
@@ -196,7 +196,7 @@ Carla's balances after auction:  {0: 98997100, 23: 1}  Algos
 	"target": "http://172.17.0.1:8080/webhook"
 }
 
-< Read "Token" from The response, then use 
+< Read "Token" from The response
 
 {
 	"topic": {
