@@ -20,9 +20,10 @@ Inspired by [PyTEAL Offchain Worker](https://github.com/ubinix-warun/pyteal-offc
 ```
 Pulling sandbox... POC: Dev PubSocket)
 ...
+
 Checkout sandbox... (Branch: Dev PubSocket)
-Branch 'block-pubsub' set up to track remote branch 'block-pubsub' from 'origin'.
-Switched to a new branch 'block-pubsub'
+Branch 'develop-pubsocket' set up to track remote branch 'block-pubsub' from 'origin'.
+Switched to a new branch 'develop-pubsocket'
 ...
 
 algod version
@@ -36,9 +37,9 @@ Indexer version
 
 ```
 
-* Install Insomnia and import [API File]() for demo api.
+* Install Insomnia and import [API File](https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/Insomnia-All_2022-11-02.json) for demo api.
 
-<img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/screen_createTopicWs.png" width="80%">
+<img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/screen_createTopicWsAll_Zoom.png" width="80%">
 
 Current version, the topic type is content [ "*", "SENDER", "RECEIVER", "APPID" ].
 
