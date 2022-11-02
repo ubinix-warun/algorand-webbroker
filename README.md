@@ -1,6 +1,6 @@
 # Algorand WebBroker
 
-Challenge With [Bounty](https://gitcoin.co/issue/29380) - [Algorand Greehouse Hack #2](https://gitcoin.co/hackathon/greenhouse). <br/>
+Challenge with [Bounty](https://gitcoin.co/issue/29380) - [Algorand Greehouse Hack #2](https://gitcoin.co/hackathon/greenhouse). <br/>
 >> We are looking to build a solution that will enable subscribing to events on the blockchain and all the subscribers will be notified in real time of the various events they subscribe to.
 
 No polling the indexer, Merge block event on indexer. <br/>
@@ -11,8 +11,9 @@ WebBroker's support subscribe blockEvent via Websocket and Webhook.
 * [https://github.com/ubinix-warun/algorand-indexer](https://github.com/ubinix-warun/algorand-indexer/tree/develop-pubsocket) -- extend the indexer to subscribe blockEvent.
 * [https://github.com/ubinix-warun/algorand-sandbox](https://github.com/ubinix-warun/algorand-sandbox/tree/develop-pubsocket) -- sandbox toolkit for quickstart node/indexer and pg.
 
+<br/>
 
-Inspired by [PyTEAL Offchain Worker](https://github.com/ubinix-warun/pyteal-offchain-worker) and [Algo Checker](https://github.com/ubinix-warun/pyteal-offchain-worker).
+Inspired by [PyTEAL Offchain Worker](https://github.com/ubinix-warun/pyteal-offchain-worker) and [Algo Checker from Algorand Greehouse Hack #1](https://github.com/ubinix-warun/react-algochecker).
 
 -----------------
 
