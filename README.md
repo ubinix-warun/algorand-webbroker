@@ -40,6 +40,8 @@ Indexer version
 
 <img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/screen_createTopicWs.png" width="80%">
 
+Current version, the topic type is content [ "*", "SENDER", "RECEIVER", "APPID" ].
+
 <details>
   <summary><b><h3>Scenario 1 -- CreateTopic (All) via WebSocket</h3></b></summary>
   
@@ -121,8 +123,6 @@ Carla's balances after auction:  {0: 98997100, 23: 1}  Algos
 
 </details>
 
-Current version, the topic type is content [ "*", "SENDER", "RECEIVER", "APPID" ].
-
 <details>
   <summary><b><h3>Scenario 2 -- CreateTopic (RECEIVER) via WebSocket </h3></b></summary>
   
@@ -172,7 +172,7 @@ Current version, the topic type is content [ "*", "SENDER", "RECEIVER", "APPID" 
 </details>
 
 <details>
-  <summary><b><h3>Scenario 2 -- CreateTopic (SENDER) via Webhook </h3></b></summary>
+  <summary><b><h3>Scenario 3 -- CreateTopic (SENDER) via Webhook </h3></b></summary>
   
 * Generate token for Webhook and set topic type is "SENDER" (Txn.).
 
