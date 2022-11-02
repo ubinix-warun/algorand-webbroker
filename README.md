@@ -3,7 +3,7 @@
 Not polling the indexer, Merge block event on Indexer. <br/>
 WebBroker's support subscribe blockEvent via Websocket and Webhook.
 
-<img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/diagram.png" width="80%">
+<img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/diagram2.png" width="80%">
 
 * [https://github.com/ubinix-warun/algorand-indexer](https://github.com/ubinix-warun/algorand-indexer/tree/develop-pubsocket) -- extend The indexer to subscribe blockEvent.
 * [https://github.com/ubinix-warun/algorand-sandbox](https://github.com/ubinix-warun/algorand-sandbox/tree/develop-pubsocket) -- sandbox toolkit for quickstart node/indexer and pg.
