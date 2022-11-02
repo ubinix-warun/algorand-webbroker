@@ -42,7 +42,7 @@ Indexer version
 
 ### Scenario 1 -- CreateTopic via WebSocket
 
-* Generate Token for Websocket
+* Generate token for Websocket and set topic type is "*" (all message).
 
 ```
 
@@ -50,7 +50,7 @@ Indexer version
 
 {
 	"topic": {
-			"type": "*"
+		"type": "*"
 	}
 }
 
@@ -75,6 +75,10 @@ Indexer version
 < Block Event will Streaming
 
 ```
+
+Current version, the topic type is content [ "*", "SENDER", "RECEIVER", "APPID" ].
+
+
 
 # Credit
 
