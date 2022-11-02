@@ -40,8 +40,9 @@ Indexer version
 
 <img src="https://raw.githubusercontent.com/ubinix-warun/algorand-webbroker/main/docs/assets/screen_createTopicWs.png" width="80%">
 
-### Scenario 1 -- CreateTopic via WebSocket
-
+<details>
+  <summary><b><h3>Scenario 1 -- CreateTopic (All) via WebSocket</h3></b></summary>
+  
 * Generate token for Websocket and set topic type is "*" (all message).
 
 ```
@@ -76,7 +77,150 @@ Indexer version
 
 ```
 
+* Run aution-demo (PyTEAL)
+
+```
+python3 -m venv venv
+. venv/bin/activate
+
+pip3 install -r requirements.txt
+
+python3 example.py 
+Generating temporary accounts...
+Alice (seller account): 4IALSKYNMFQP3SZIV32STRZKKBH4IZZGDOO4ZF4CQ4HENYBRIKQGKDJK5Q
+Bob (auction creator account): CF2KGOH2LUTB6ZBPU4IW3CDVEMPKB7VKT4HIRFRFGUUOWBAELHMGP4VRFE
+Carla (bidder account) Q3YRLDW7TNQBM5DX46QGOQ2F5PO6WM7F4N3ENJTIZWRHRKPRD3X6BRHH3M 
+
+Alice is generating an example NFT...
+The NFT ID is 23
+Alice's balances: {0: 99999000, 23: 1} 
+
+Bob is creating an auction that lasts 30 seconds to auction off the NFT...
+Done. The auction app ID is 24 and the escrow account is NSPP3V5XFPOB7NEVTYVHFZNE3AOUC4FZPDMEHA4XOBYN6OUJZIBVHTUQKI 
+
+Alice is setting up and funding NFT auction...
+Done
+
+Alice's balances: {0: 99998099, 23: 0}
+Auction escrow balances: {0: 202000, 23: 1} 
+
+Carla wants to bid on NFT, her balances: {0: 100000100}
+Carla is placing bid for 1000000 microAlgos
+Carla is opting into NFT with ID 23
+Done
+
+Waiting 17 seconds for the auction to finish
+
+Alice is closing out the auction
+
+The auction escrow now holds the following: {0: 0}
+Alice's balances after auction:  {0: 101197099, 23: 0}  Algos
+Carla's balances after auction:  {0: 98997100, 23: 1}  Algos
+
+```
+
+</details>
+
 Current version, the topic type is content [ "*", "SENDER", "RECEIVER", "APPID" ].
+
+<details>
+  <summary><b><h3>Scenario 2 -- CreateTopic (RECEIVER) via WebSocket </h3></b></summary>
+  
+* Generate token for Websocket and set topic type is "RECEIVER" (Txn.).
+
+```
+
+> Request HTTP (POST) to  /generate/websocket with X-API-KEY="<ENV>" 
+
+{
+	"topic": {
+		"type": "RECEIVER",
+		"param": "QTGWOZ72DQ4SBCQGQC3T56VVROA3LXVRZFQS3JCX47KYEKG3YSQGXRGKZY"
+	}
+}
+
+< Read "Token" from The response, then use 
+
+{
+	"topic": {
+		"type": "RECEIVER",
+		"param": "QTGWOZ72DQ4SBCQGQC3T56VVROA3LXVRZFQS3JCX47KYEKG3YSQGXRGKZY"
+	},
+	"Target": "",
+	"Token": "Rzbf8rmt62qcaeOp"
+}
+
+```
+
+* Subscribe BlockEvent via WebSocket
+
+```
+
+> Connect Websocket to /ws/Rzbf8rmt62qcaeOp with X-API-KEY="<ENV>" 
+< Block Event will Streaming
+
+```
+
+* Run Transfer ALGO
+
+```
+
+./sandbox goal clerk send -a 123456789 -f P2AMOMKGLVYEJENIDN3LSS5TR3OHHBFRJHP3NYWYCPIMGTJW6CQH6K4YDY -t QTGWOZ72DQ4SBCQGQC3T56VVROA3LXVRZFQS3JCX47KYEKG3YSQGXRGKZY
+
+```
+
+</details>
+
+<details>
+  <summary><b><h3>Scenario 2 -- CreateTopic (SENDER) via Webhook </h3></b></summary>
+  
+* Generate token for Webhook and set topic type is "SENDER" (Txn.).
+
+```
+
+> Request HTTP (POST) to  /generate/webhook with X-API-KEY="<ENV>" 
+
+{
+	"topic": {
+		"type": "SENDER",
+		"param": "P2AMOMKGLVYEJENIDN3LSS5TR3OHHBFRJHP3NYWYCPIMGTJW6CQH6K4YDY"
+	},
+	"target": "http://172.17.0.1:8080/webhook"
+}
+
+< Read "Token" from The response, then use 
+
+{
+	"topic": {
+		"type": "SENDER",
+		"param": "P2AMOMKGLVYEJENIDN3LSS5TR3OHHBFRJHP3NYWYCPIMGTJW6CQH6K4YDY"
+	},
+	"Target": "http://172.17.0.1:8080/webhook",
+	"Token": "cjg5UdOBQSvqEZc9"
+}
+
+```
+
+* Run Hook-Receiver on backends/hook-receiver
+
+
+```
+npm -i
+node index.js
+
+> wait hooking
+
+```
+
+* Run Transfer ALGO (Again)
+
+```
+
+./sandbox goal clerk send -a 123456789 -f P2AMOMKGLVYEJENIDN3LSS5TR3OHHBFRJHP3NYWYCPIMGTJW6CQH6K4YDY -t QTGWOZ72DQ4SBCQGQC3T56VVROA3LXVRZFQS3JCX47KYEKG3YSQGXRGKZY
+
+```
+
+</details>
 
 
 
