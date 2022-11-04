@@ -25,6 +25,8 @@ Inspired by [PyTEAL Offchain Worker](https://github.com/ubinix-warun/pyteal-offc
 * Create sandbox docker, algod and indexer.
 
 ```
+./sandbox up -v
+
 Pulling sandbox... POC: Dev PubSocket)
 ...
 
@@ -212,6 +214,8 @@ Carla's balances after auction:  {0: 98997100, 23: 1}  Algos
 * Run Hook-Receiver on backends/hook-receiver
 
 ```
+cd backends/hook-receiver
+
 npm -i
 node index.js
 
