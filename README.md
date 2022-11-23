@@ -1,6 +1,6 @@
 # Algorand WebBroker
 
-Challenge with [Bounty](https://gitcoin.co/issue/29380) - [Algorand Greehouse Hack #2](https://gitcoin.co/hackathon/greenhouse). <br/>
+Challenge with [Bounty](https://gitcoin.co/issue/29380) - 🥇[Algorand Greehouse Hack #2](https://twitter.com/DevGreenhouse/status/1595092784272519168). <br/>
 >> We are looking to build a solution that will enable subscribing to events on the blockchain and all the subscribers will be notified in real time of the various events they subscribe to.
 
 No polling the indexer, Merge block event proc on indexer. <br/>
